@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  webserver:
+    image: nginx:latest
+    ports:
+      - "80:80"
+
+  http_status_checker:
+    build: .
+    depends_on:
+      - webserver
